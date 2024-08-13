@@ -1,4 +1,4 @@
-# Responsive Todo List App
+# Responsive ShopingCart App
 
 ## Table of Contents
 - [Features](#features)
