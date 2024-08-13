@@ -2,66 +2,61 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="shortcut icon" href="#" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shoping Cart</title>
     <link href="./style.css" rel="stylesheet" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-      crossorigin="anonymous"
-    />
-    <title>ShopingCart</title>
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   </head>
   <body>
-    <!-- Navigation -->
-  <div class="main-container">
-    <nav class="navbar">
-      <div class="navbar-center">
-        <span class="nav-icon">
-          <i class="fas fa-bars"></i>
-        </span>
-        <span class="nav-title">Shoping Cart Project</span>
-        <div class="cart-btn">
+    <div class="container">
+    <!-- navigation - header -->
+      <nav class="navbar">
+        <div class="navbar-center">
           <span class="nav-icon">
-            <i class="fas fa-cart-plus"></i>
+            <i class="fas fa-bars"></i>
           </span>
-          <div class="cart-items">0</div>
+          <span class="nav-title">Shoping Cart Project</span>
+          <div class="cart-btn">
+            <span class="nav-icon">
+              <i class="fas fa-cart-plus"></i>
+            </span>
+            <div class="cart-items">0</div>
+          </div>
         </div>
-      </div>
-    </nav>
-    <!-- Navigation -->
-
+      </nav>
+    <!-- navigation - header -->
+    
     <!-- products -->
     <section class="products">
-      <div class="section-title">
-        <h2>Products</h2>
-      </div>
-      <!-- single product -->
-      <div class="products-center">
-        <!-- <div class="product">
-          <div class="img-container">
-            <img src="./images/product-1.jpeg" class="product-img" />
-          </div>
-          <div class="product-desc">
-            <p class="product-price">$ 11.99</p>
-            <p class="product-title">carpet</p>
-          </div>
-          <button class="btn add-to-cart ">
-            <i class="fas fa-shopping-cart"></i>
-            add to cart
-          </button>
-        </div> -->
-      
-    </section>
+        <div class="section-title">
+          <h2>Products</h2>
+          <span>Home > Shop</span>
+        </div>
+        <!-- single product -->
+        <div class="products-center">
+          <!-- <div class="product">
+            <div class="img-container">
+              <img src="./images/product-1.jpeg" class="product-img" />
+            </div>
+            <div class="product-desc">
+              <p class="product-price">$ 11.99</p>
+              <p class="product-title">carpet</p>
+            </div>
+            <button class="btn add-to-cart ">
+              <i class="fas fa-shopping-cart"></i>
+              Add To Cart
+            </button>
+           </div> -->
+        </div>     
+      </section>
     <!-- products -->
-    <!-- Cart section -->
-    <section class="cart-center">
-      <div class="backdrop"></div>
 
-      <!-- <button class="btn show-modal">show modal</button> -->
-      <div class="cart">
+        <!-- Cart section -->
+    <section class="cart-center">
+      <div class="backdrop hidden"></div>
+      <div class="cart hidden">
         <h3 class="cart-title">Your Cart</h3>
         <div class="cart-content">
           <!-- single item -->
@@ -79,13 +74,12 @@
           </div> -->
         </div> 
         <div class="cart-footer">
-          <span class="cart-total">total price : 90 $</span>
-          <button  class="btn clear-cart"> clear cart</button>
+          <span class="cart-total"></span>
+          <button  class="btn clear-cart">clear cart</button>
           <button class="btn cart-item-confirm">confirm</button>
         </div>
       </div>
     </section>
-  </div>
-    <script type="module" src="./index.js"></script>
+    <script src="script.js" type="module"></script>
   </body>
 </html>
