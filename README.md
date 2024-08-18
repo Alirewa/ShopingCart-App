@@ -24,4 +24,4 @@
 2. **Open `index.html` in your preferred web browser.**
 
 ## Demo
-https://alirewa.github.io/Shoping-Cart/
+https://alirewa.github.io/ShopingCart-App/
