@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>فروشگاه آنلاین</title>
+    <link href="./style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./fa/all.min.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-center">
+        <div class="nav-brand">
+          <i class="fas fa-store nav-brand-icon"></i>
+          <span class="nav-title">فروشگاه آنلاین</span>
+        </div>
+        <button class="cart-btn" aria-label="سبد خرید">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-badge">0</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>خرید آسان، تجربه‌ای متفاوت</h1>
+        <p>بهترین محصولات با قیمت مناسب در یک مکان</p>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products">
+      <div class="section-header">
+        <div class="section-title">
+          <h2>محصولات</h2>
+          <span class="breadcrumb">خانه &#8250; فروشگاه</span>
+        </div>
+        <span class="products-count"></span>
+      </div>
+      <div class="products-center"></div>
+    </section>
+
+    <!-- Toast -->
+    <div class="toast hidden">
+      <i class="fas fa-check-circle toast-icon"></i>
+      <span class="toast-msg">محصول به سبد اضافه شد</span>
+    </div>
+
+    <!-- Cart -->
+    <div class="backdrop hidden"></div>
+    <div class="cart hidden">
+      <div class="cart-header">
+        <h3 class="cart-title">
+          <i class="fas fa-shopping-cart"></i>
+          سبد خرید
+        </h3>
+        <button class="cart-close-btn" aria-label="بستن">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="cart-body">
+        <div class="cart-content"></div>
+        <div class="cart-empty hidden">
+          <i class="fas fa-shopping-cart cart-empty-icon"></i>
+          <p>سبد خرید شما خالی است</p>
+          <span>محصولات مورد علاقه خود را اضافه کنید</span>
+        </div>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span class="cart-total-label">جمع کل:</span>
+          <span class="cart-total">۰ تومان</span>
+        </div>
+        <div class="cart-actions">
+          <button class="btn btn-danger clear-cart">
+            <i class="fas fa-trash-alt"></i>
+            پاک کردن
+          </button>
+          <button class="btn btn-primary cart-item-confirm">
+            <i class="fas fa-check"></i>
+            تایید سفارش
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
