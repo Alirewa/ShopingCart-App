@@ -70,6 +70,17 @@ body {
 }
 
 /* ══════════════════════════════════════════
+   ICONS (inline SVG, no external font/CDN)
+══════════════════════════════════════════ */
+.icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: -0.125em;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════
    NAVBAR
 ══════════════════════════════════════════ */
 .navbar {
@@ -443,7 +454,7 @@ body {
   gap: 0.5rem;
 }
 
-.cart-title i {
+.cart-title .icon {
   color: var(--primary-600);
 }
 
@@ -545,18 +556,28 @@ body {
   gap: 2px;
 }
 
-.cart-item-conteoller .fa-chevron-up,
-.cart-item-conteoller .fa-chevron-down {
+.qty-btn,
+.delete-item-btn {
+  background: none;
+  border: none;
+  font-family: inherit;
   cursor: pointer;
-  color: var(--gray-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  min-height: 32px;
   padding: 5px 7px;
   border-radius: 6px;
   transition: var(--transition-fast);
-  font-size: 0.75rem;
 }
 
-.cart-item-conteoller .fa-chevron-up:hover,
-.cart-item-conteoller .fa-chevron-down:hover {
+.qty-btn {
+  color: var(--gray-400);
+  font-size: 0.85rem;
+}
+
+.qty-btn:hover {
   background: var(--primary-100);
   color: var(--primary-700);
 }
@@ -569,17 +590,13 @@ body {
   color: var(--gray-800);
 }
 
-.fa-trash-alt {
-  cursor: pointer;
+.delete-item-btn {
   color: var(--danger);
-  font-size: 0.8rem;
-  padding: 5px 7px;
-  border-radius: 6px;
+  font-size: 0.9rem;
   margin-top: 4px;
-  transition: var(--transition-fast);
 }
 
-.fa-trash-alt:hover {
+.delete-item-btn:hover {
   background: var(--danger-light);
   color: var(--danger);
 }

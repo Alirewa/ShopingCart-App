@@ -1,4 +1,5 @@
 import { productsData } from "./products.js";
+import { icon } from "./icons.js";
 
 const productsList   = document.querySelector(".products-center");
 const cartTotal      = document.querySelector(".cart-total");
@@ -54,7 +55,7 @@ class UI {
         </div>
         <div class="product-footer">
           <button class="btn add-to-cart" data-id="${item.id}">
-            <i class="fas fa-shopping-cart"></i>
+            ${icon("cart")}
             افزودن به سبد
           </button>
         </div>
@@ -74,12 +75,12 @@ class UI {
     btns.forEach((btn) => {
       const id = btn.dataset.id;
       if (cart.find((p) => p.id == id)) {
-        btn.innerHTML = '<i class="fas fa-check"></i> در سبد خرید';
+        btn.innerHTML = `${icon("check")} در سبد خرید`;
         btn.disabled = true;
       }
 
       btn.addEventListener("click", () => {
-        btn.innerHTML = '<i class="fas fa-check"></i> در سبد خرید';
+        btn.innerHTML = `${icon("check")} در سبد خرید`;
         btn.disabled = true;
 
         const product = { ...Storage.getProduct(id), quantity: 1 };
@@ -115,10 +116,10 @@ class UI {
         <h5>${formatPrice(item.price)}</h5>
       </div>
       <div class="cart-item-conteoller">
-        <i class="fas fa-chevron-up"   data-id="${item.id}"></i>
+        <button class="qty-btn qty-up" data-id="${item.id}" aria-label="افزایش تعداد">${icon("chevron-up")}</button>
         <p>${item.quantity}</p>
-        <i class="fas fa-chevron-down" data-id="${item.id}"></i>
-        <i class="far fa-trash-alt"   data-id="${item.id}"></i>
+        <button class="qty-btn qty-down" data-id="${item.id}" aria-label="کاهش تعداد">${icon("chevron-down")}</button>
+        <button class="delete-item-btn" data-id="${item.id}" aria-label="حذف محصول">${icon("trash")}</button>
       </div>`;
     cartContent.appendChild(div);
   }
@@ -143,32 +144,34 @@ class UI {
     }
 
     cartContent.addEventListener("click", (e) => {
-      const target = e.target;
+      const upBtn     = e.target.closest(".qty-up");
+      const downBtn   = e.target.closest(".qty-down");
+      const deleteBtn = e.target.closest(".delete-item-btn");
 
-      if (target.classList.contains("fa-chevron-up")) {
-        const item = cart.find((c) => c.id == target.dataset.id);
+      if (upBtn) {
+        const item = cart.find((c) => c.id == upBtn.dataset.id);
         item.quantity++;
         this.setCartValue(cart);
         Storage.saveCart(cart);
-        target.nextElementSibling.textContent = item.quantity;
+        upBtn.nextElementSibling.textContent = item.quantity;
 
-      } else if (target.classList.contains("fa-chevron-down")) {
-        const item = cart.find((c) => c.id == target.dataset.id);
+      } else if (downBtn) {
+        const item = cart.find((c) => c.id == downBtn.dataset.id);
         if (item.quantity === 1) {
           this.removeItem(item.id);
-          cartContent.removeChild(target.closest(".cart-item"));
+          cartContent.removeChild(downBtn.closest(".cart-item"));
           this.updateEmptyState();
           return;
         }
         item.quantity--;
         this.setCartValue(cart);
         Storage.saveCart(cart);
-        target.previousElementSibling.textContent = item.quantity;
+        downBtn.previousElementSibling.textContent = item.quantity;
 
-      } else if (target.classList.contains("fa-trash-alt")) {
-        const item = cart.find((c) => c.id == target.dataset.id);
+      } else if (deleteBtn) {
+        const item = cart.find((c) => c.id == deleteBtn.dataset.id);
         this.removeItem(item.id);
-        cartContent.removeChild(target.closest(".cart-item"));
+        cartContent.removeChild(deleteBtn.closest(".cart-item"));
         this.updateEmptyState();
       }
     });
@@ -187,7 +190,7 @@ class UI {
     Storage.saveCart(cart);
     const btn = buttonsDom.find((b) => b.dataset.id == id);
     if (btn) {
-      btn.innerHTML = '<i class="fas fa-shopping-cart"></i> افزودن به سبد';
+      btn.innerHTML = `${icon("cart")} افزودن به سبد`;
       btn.disabled = false;
     }
   }

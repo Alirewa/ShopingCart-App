@@ -19,6 +19,7 @@ A fully client-side **Persian (Farsi) shopping cart** web application built with
 - **localStorage persistence** — cart survives page refreshes
 - **Toast notifications** — feedback on every add-to-cart action
 - **Empty cart state** — friendly message when cart is empty
+- **Zero external icon dependency** — inline SVG icons, no font/CDN required, renders identically offline, online, and on `file://`
 - **Animated badge** — cart item count bumps on update
 - **Fully responsive** — 2–4 column grid adapts from mobile to desktop
 
@@ -31,7 +32,7 @@ A fully client-side **Persian (Farsi) shopping cart** web application built with
 | Vanilla JavaScript (ES6+) | Cart logic, DOM manipulation, localStorage |
 | HTML5 / CSS3 | RTL layout, CSS Grid & Flexbox, CSS custom properties |
 | Vazirmatn (Google Fonts) | Persian-optimized typeface |
-| Font Awesome 5 | UI icons |
+| Inline SVG | UI icons — zero external font/CDN dependency, works offline and on `file://` |
 | localStorage API | Client-side cart persistence |
 | GitHub Pages + Actions | Automated static deployment |
 
